@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  postgres.meryats-services:
+    image: postgres:14
+    restart: always
+    environment:
+      # POSTGRES_MULTIPLE_DATABASES: bouncecode
+      POSTGRES_DB: meryats
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: fKQw9NBy7VKiptGO
+    volumes:
+      - postgresql.meryats:/var/lib/postgresql/data
+    ports:
+      - 5448:5432 # temporary
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+volumes:
+  postgresql.meryats:

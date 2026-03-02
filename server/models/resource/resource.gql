@@ -1,0 +1,14 @@
+mutation AllResourceList {
+  allResourceList {
+    id
+    type
+    price
+    speciesPreference
+    productionBuildings {
+      id
+      grade
+      buildingType
+    }
+    special
+  }
+}

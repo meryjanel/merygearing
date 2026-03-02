@@ -1,0 +1,16 @@
+mutation AllNodeList {
+  allNodeList {
+    id
+    size
+    charges
+    primary
+    camp
+    biome
+    bonus {
+      id
+      bonusPercent
+    }
+    allResources
+    special
+  }
+}

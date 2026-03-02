@@ -1,0 +1,11 @@
+mutation AllBiomeList {
+  allBiomeList {
+    id
+    dlc
+    fertileSoil
+    trees
+    nodes
+    effects
+    special
+  }
+}

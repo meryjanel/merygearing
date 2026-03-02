@@ -1,0 +1,23 @@
+mutation AllBuildingList {
+  allBuildingList {
+    id
+    buildingType
+    workers
+    storage
+    buildingIngredients {
+      material
+      num
+    }
+    cityScore
+    buildTime
+    buildingSize
+    proficiency
+    comfort
+    logic
+    moveable
+    rainpunk
+    allIngredients
+    allProducts
+    special
+  }
+}
