@@ -15,7 +15,12 @@ export default class ConnectionService {
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       synchronize: true,
-      entities: ["server/models/**/*.entity.{js,ts}"],
+      entities: [
+        // 프로덕션과 개발버전 차이
+        process.env.NODE_ENV === "production"
+          ? "dist/server/models/**/*.entity.{js,ts}"
+          : "server/models/**/*.entity.{js,ts}",
+      ],
     };
     this.connection = new DataSource(dataSourceOptions);
     ConnectionService.instance = this;

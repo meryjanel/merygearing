@@ -4,8 +4,10 @@
   "description": "toats",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--max-old-space-size=8192 nodemon --ignore src/ --ignore .next/ --ignore public/ --ignore scrpit/ --ignore data/ -r tsconfig-paths/register --files ./server/index.ts",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next build",
-    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 pm2 start --wait-ready --listen-timeout 300000 -i 1 ts-node --name meryats -- -r tsconfig-paths/register --files ./server/index.ts",
+    "build:client": "next build",
+    "build:server": "tsc --project tsconfig.server.json && tsc-alias -p tsconfig.server.json",
+    "build": "npm run build:client && npm run build:server",
+    "start": "cross-env NODE_OPTIONS='--max-old-space-size=800' node -r tsconfig-paths/register ./dist/server/index.js",
     "ts-node": "ts-node  -r tsconfig-paths/register --files",
     "codegen": "graphql-codegen"
   },
@@ -63,6 +65,7 @@
     "rxjs": "^7.8.2",
     "sharp": "^0.34.5",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
     "type-graphql": "^2.0.0-rc.2",
     "typeorm": "^0.3.28",

@@ -4,7 +4,7 @@ import * as url from "url";
 
 // next.js ssr서버 설정
 // 데브는 추후에 env추가해서 설정
-const app = next({ dev: true });
+const app = next({ dev: process.env.NODE_ENV === "development" });
 const handle = app.getRequestHandler();
 
 // nextjs를 expressApp으로 실행

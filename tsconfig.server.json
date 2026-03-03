@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "esModuleInterop": true /* default import 호환성 제공 */,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./"
+  },
+  "include": ["server/**/*", "next-i18next.config.js", "next.config.ts"],
+  "exclude": ["src/**/*", ".next", "node_modules"]
+}

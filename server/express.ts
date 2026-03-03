@@ -104,6 +104,11 @@ const glserver = new ApolloServer({
   schema,
   // graphql 테스팅용 샌드박스 딮하게할땐 빌드후엔 이게 없어야한다
   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
+  formatError: (error) => {
+    console.error("--- Apollo Server Error ---");
+    console.error(error); // 여기서 서버 터미널에 에러가 찍혀야 합니다.
+    return error;
+  },
   //
 });
 
