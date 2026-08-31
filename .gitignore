@@ -39,6 +39,7 @@ next-env.d.ts
 /downloads
 
 /.env
+/.env.production
 
 /merytest
 

@@ -4,11 +4,10 @@ services:
   postgres.meryats-services:
     image: postgres:14
     restart: always
-    environment:
-      # POSTGRES_MULTIPLE_DATABASES: bouncecode
+    environment:      
       POSTGRES_DB: meryats
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: fKQw9NBy7VKiptGO
+      POSTGRES_USER: root #production에선 변경해서 사용
+      POSTGRES_PASSWORD: fKQw9NBy7VKiptGO #production에선 변경해서 사용
     volumes:
       - postgresql.meryats:/var/lib/postgresql/data
     ports:
